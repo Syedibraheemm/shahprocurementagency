@@ -171,53 +171,62 @@
 </section>
 
 
-
-  <!-- Stats -->
-  <section id="stats" class="py-20 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-10">Our Impact</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div>
-          <p class="text-4xl font-bold text-blue-900 dark:text-blue-300">500+</p>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">Projects Delivered</p>
-        </div>
-        <div>
-          <p class="text-4xl font-bold text-blue-900 dark:text-blue-300">10+</p>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">Cities Covered</p>
-        </div>
-        <div>
-          <p class="text-4xl font-bold text-blue-900 dark:text-blue-300">100+</p>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">Happy Clients</p>
-        </div>
-        <div>
-          <p class="text-4xl font-bold text-blue-900 dark:text-blue-300">13+</p>
-          <p class="text-gray-600 dark:text-gray-300 mt-2">Years Experience</p>
-        </div>
+<!-- Stats -->
+<section id="stats" class="py-20 bg-white dark:bg-gray-900">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-10">Our Impact</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div>
+        <p class="stat-number text-4xl font-bold text-blue-900 dark:text-blue-300" data-target="500">0</p>
+        <p class="text-gray-600 dark:text-gray-300 mt-2">Projects Delivered</p>
+      </div>
+      <div>
+        <p class="stat-number text-4xl font-bold text-blue-900 dark:text-blue-300" data-target="10">0</p>
+        <p class="text-gray-600 dark:text-gray-300 mt-2">Cities Covered</p>
+      </div>
+      <div>
+        <p class="stat-number text-4xl font-bold text-blue-900 dark:text-blue-300" data-target="100">0</p>
+        <p class="text-gray-600 dark:text-gray-300 mt-2">Happy Clients</p>
+      </div>
+      <div>
+        <p class="stat-number text-4xl font-bold text-blue-900 dark:text-blue-300" data-target="13">0</p>
+        <p class="text-gray-600 dark:text-gray-300 mt-2">Years Experience</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-10">Contact Us</h2>
-      <div class="max-w-3xl mx-auto bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md">
-        <form action="https://formspree.io/f/mqalzodr" method="POST" class="space-y-4">
-          <input type="text" name="name" placeholder="Your Name" class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:border-gray-600" required />
-          <input type="email" name="email" placeholder="Your Email" class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:border-gray-600" required />
-          <select name="service" class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:border-gray-600">
-            <option>School Supplies</option>
-            <option>Solar Equipment</option>
-            <option>Office Supplies</option>
-            <option>Custom Order</option>
-          </select>
-          <textarea name="message" rows="5" placeholder="Your Message" class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:border-gray-600" required></textarea>
-          <button type="submit" class="bg-blue-900 text-white px-6 py-2 rounded hover:bg-blue-800">Send Message</button>
-        </form>
-      </div>
+<section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">Contact Us</h2>
+    <div class="max-w-3xl mx-auto bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md">
+      <form action="https://formspree.io/f/mqalzodr" method="POST" class="space-y-4">
+        <input type="text" name="name" placeholder="Your Name" class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:border-gray-600" required />
+        <input type="email" name="email" placeholder="Your Email" class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:border-gray-600" required />
+        <select name="service" class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:border-gray-600">
+          <option>School Supplies</option>
+          <option>Solar Equipment</option>
+          <option>Office Supplies</option>
+          <option>Custom Order</option>
+          <option>Software Solutions</option>
+          <option>Accounting & Financial Services</option>
+        </select>
+        <textarea name="message" rows="5" placeholder="Your Message" class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:border-gray-600" required></textarea>
+        
+        <!-- Centered Button with Zoom Effect -->
+        <div class="text-center">
+          <button type="submit" class="bg-blue-900 text-white px-6 py-2 rounded transition-transform duration-300 transform hover:scale-105 hover:bg-blue-800">
+            Send Message
+          </button>
+        </div>
+        
+      </form>
     </div>
-  </section>
-<!-- Footer -->
+  </div>
+</section>
+
+  <!-- Footer -->
 <footer class="bg-blue-900 text-white text-center py-6">
   <p class="text-sm">© 2025 Shah Procurement Agency. All rights reserved.</p>
 </footer>
@@ -237,6 +246,48 @@
 <script>
   AOS.init();
 </script>
+
+
+<script>
+  const counters = document.querySelectorAll('.stat-number');
+  let counted = false;
+
+  const options = {
+    threshold: 0.5
+  };
+
+  const animateCount = (el, target) => {
+    let current = 0;
+    const speed = target / 100; // Adjust speed here
+    const update = () => {
+      current += speed;
+      if (current < target) {
+        el.textContent = Math.floor(current);
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target + (el.dataset.target.includes('+') ? '+' : '');
+      }
+    };
+    update();
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !counted) {
+        counted = true;
+        counters.forEach(counter => {
+          const target = parseInt(counter.dataset.target);
+          animateCount(counter, target);
+        });
+        obs.disconnect(); // Optional: Stop observing after first trigger
+      }
+    });
+  }, options);
+
+  const statsSection = document.querySelector('#stats');
+  observer.observe(statsSection);
+</script>
+
 
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/923345657935" target="_blank"
